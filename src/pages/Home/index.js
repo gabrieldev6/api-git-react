@@ -4,9 +4,9 @@ import axios from 'axios';
 import * as S from './styled';
 import { useHistory } from 'react-router-dom';
 
- function App(props) {
+ function App() {
   const history = useHistory()
-  const [ usuario, setUsuario ] = useState('')
+  const [ usuario , setUsuario ] = useState('')
   const [ erro, setErro ] = useState(false)
   
   function handlePesquisa() {
@@ -28,6 +28,7 @@ import { useHistory } from 'react-router-dom';
  
   return (
     <S.Container>
+      <h1>Digite o Nome do seu usuario Github</h1>
       <S.Input className='usuarioInput' placeholder='Usuario' value={usuario} onChange={e => setUsuario(e.target.value)}></S.Input>
       <S.Button type='button' onClick={handlePesquisa}>Pesquisar</S.Button>
       {erro ? <S.ErrorMsg>Ocorreu um erro. tente novamente</S.ErrorMsg> : ''}
