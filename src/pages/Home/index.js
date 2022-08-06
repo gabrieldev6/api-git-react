@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import * as S from './styled';
 import { useHistory } from 'react-router-dom';
+import Link from '../Link';
 
  function App() {
   const history = useHistory()
@@ -30,7 +31,7 @@ import { useHistory } from 'react-router-dom';
     <S.Container>
       <h1>Digite o Nome do seu usuario Github</h1>
       <S.Input className='usuarioInput' placeholder='Usuario' value={usuario} onChange={e => setUsuario(e.target.value)}></S.Input>
-      <S.Button type='button' onClick={handlePesquisa}>Pesquisar</S.Button>
+      <Link redirect="/repositories"><S.Button type='button' onClick={handlePesquisa}>Pesquisar</S.Button></Link>
       {erro ? <S.ErrorMsg>Ocorreu um erro. tente novamente</S.ErrorMsg> : ''}
     </S.Container>
 
